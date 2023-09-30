@@ -92,6 +92,21 @@ function ContactForm() {
         <br />
         <button>Submit</button>
       </form>
+
+      <div>
+        <h2>Contacts</h2>
+        {contactState.length === 0 ? (
+          <p>Aún no hay contactos</p>
+        ) : (
+          <ul>
+            {contactState.map(contact => (
+              <li key={uuid()}>
+                {contact.name}: {contact.number} 
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
     
       <form onSubmit={e => handleSubmit(e, 'filteredContact')}>
         <h2>Find contacts by name</h2>
