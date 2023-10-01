@@ -102,6 +102,7 @@ function ContactForm() {
             {contactState.map(contact => (
               <li key={uuid()}>
                 {contact.name}: {contact.number} 
+                <button onClick={() => handleDeleteContact(contact.id)}>Delete</button>
               </li>
             ))}
           </ul>
@@ -115,7 +116,6 @@ function ContactForm() {
           {filteredContactState.map(contact => (
             <li key={uuid()}>
               {contact.name}: {contact.number} 
-              <button onClick={() => handleDeleteContact(contact.id)}>Delete</button>
             </li>
           ))}
         </ul>
